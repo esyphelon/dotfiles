@@ -14,14 +14,6 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
-
-  use({
       "folke/trouble.nvim",
       config = function()
           require("trouble").setup {
@@ -33,18 +25,22 @@ return require('packer').startup(function(use)
       end
   })
 
-  use {
+  use( {
 			'nvim-treesitter/nvim-treesitter',
 			run = function()
 				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 				ts_update()
-			end,}
+			end,})
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
-  use("nvim-treesitter/nvim-treesitter-context");
+  use({"lewis6991/gitsigns.nvim",
+        config = function()
+            require('gitsigns').setup()
+        end})
+  use("nvim-treesitter/nvim-treesitter-context")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -73,6 +69,6 @@ return require('packer').startup(function(use)
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
-
+  use("sainnhe/sonokai")
 end)
 

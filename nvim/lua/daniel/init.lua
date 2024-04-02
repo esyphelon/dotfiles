@@ -1,12 +1,10 @@
+vim.g.mapleader = " " 
+require("daniel.lazy")
 require("daniel.set")
 require("daniel.remap")
 
--- DO NOT INCLUDE THIS
-vim.opt.rtp:append("~/personal/streamer-tools")
--- DO NOT INCLUDE THIS
-
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local ThePrimeagenGroup = augroup('DanielGroup', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -27,7 +25,7 @@ autocmd('TextYankPost', {
 })
 
 autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
+    group = DanielGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
