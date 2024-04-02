@@ -1,0 +1,14 @@
+font:
+  normal:
+    family: "Intel One Mono"
+    style: Regular
+  italic:
+    family: "Intel One Mono"
+    style: Italic
+  bold:
+    family: "Intel One Mono"
+    style: Bold
+  bold_italic:
+    family: "Intel One Mono"
+    style: Bold italic
+  size: 16
