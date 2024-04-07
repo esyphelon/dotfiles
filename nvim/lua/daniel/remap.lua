@@ -55,3 +55,5 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+local nvimTreeAPI = require('nvim-tree.api')
+vim.keymap.set("n", "<leader>tt", nvimTreeAPI.tree.toggle)

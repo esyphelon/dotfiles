@@ -75,5 +75,16 @@ require("lazy").setup({
     "github/copilot.vim",
     "eandrju/cellular-automaton.nvim",
     "laytan/cloak.nvim",
-    "sainnhe/sonokai"
+    "sainnhe/sonokai",
+    "nvim-tree/nvim-web-devicons",
+    {"nvim-tree/nvim-tree.lua",
+        config = function()
+            require('nvim-tree').setup({
+                sort = { sorter = "case_sensitive" },
+                view = { width  = 30},
+                renderer = { group_empty = true },
+                filters  = { dotfiles = true }
+            })
+        end
+    },
 }, {})
